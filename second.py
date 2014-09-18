@@ -1,5 +1,4 @@
 from itertools import chain, combinations
-from first import mk
 
 def to_output(lst):
 	return ' '.join(str(x) for x in lst)
@@ -10,7 +9,7 @@ def powerset(iterable):
 	s = list(iterable)
 	return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
-lst = mk(input('Enter a sequence of integers (2 3 4 5 6): '))
+lst = [int(i) for i in input('Enter a sequence of integers (2 3 4 5 6): ') if i != ' ']
 chunks = 2
 
 result = [[] for i in range(chunks)]
